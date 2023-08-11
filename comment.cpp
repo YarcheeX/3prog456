@@ -8,11 +8,11 @@ comment::comment()
 	answers = nullptr;
 }
 
+
 comment::comment(date date) :comment()
 {
 	this->upload_date = date;
 }
-
 
 comment::comment(date date, string text) : comment(date)
 {
@@ -166,4 +166,12 @@ void comment::input_comment()
 	{
 		getline(cin, text);
 	}
+}
+
+ostream& operator<<(ostream& os, const comment& c)
+{
+	os << "Автор: " << c.author << "| ";
+	os << c.upload_date;
+	os << "Текст: " << c.text << '\n';
+	return os;
 }

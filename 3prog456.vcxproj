@@ -130,6 +130,7 @@
     <ClCompile Include="3prog456.cpp" />
     <ClCompile Include="answer.cpp" />
     <ClCompile Include="blogger.cpp" />
+    <ClCompile Include="car.cpp" />
     <ClCompile Include="comment.cpp" />
     <ClCompile Include="date.cpp" />
     <ClCompile Include="post.cpp" />
@@ -138,6 +139,8 @@
   <ItemGroup>
     <ClInclude Include="answer.h" />
     <ClInclude Include="blogger.h" />
+    <ClInclude Include="calculator.h" />
+    <ClInclude Include="car.h" />
     <ClInclude Include="comment.h" />
     <ClInclude Include="date.h" />
     <ClInclude Include="post.h" />

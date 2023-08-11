@@ -24,4 +24,5 @@ public:
 	void print_answer() const;
 	void input_answer();
 
+	friend ostream& operator<<(ostream& os, const answer& a);
 };

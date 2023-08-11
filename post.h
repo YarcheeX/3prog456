@@ -32,6 +32,7 @@ public:
 	void watch(unsigned views); //просмотреть пост
 	void like(unsigned a); //лайкнуть
 
+	friend ostream& operator<<(ostream& os, const post& p);
 };
 
 
@@ -54,6 +55,7 @@ public:
 	void print_post() const; //перегруженный метод базового класса
 	void input_post(); //перегруженный метод базового класса
 
+	friend ostream& operator<<(ostream& os, const video& v);
 };
 
 class photo : public post {
@@ -70,5 +72,6 @@ public:
 	void print_post() const; //перегруженный метод базового класса
 	void input_post(); //перегруженный метод базового класса
 
+	friend ostream& operator<<(ostream& os, const photo& p);
 };
 

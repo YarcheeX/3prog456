@@ -25,9 +25,10 @@ public:
 	const comment& operator = (const comment& other); //перегрузка оператора =
 	void add_answer(const answer& ans); //метод добавления ответа к комментарию
 	void set_author(string author); //сеттер автора комментария
-	void set_text(string text); //сеттер текста комментария
+	void set_text(string text);//сеттер текста комментария
 	void print_comment() const; //распечатать комментарий
 	void watch_comment() const; //посмотреть комментарий (с ответами)
 	void input_comment(); //ввести комментарий
 
+	friend ostream& operator<<(ostream& os, const comment& c);
 };

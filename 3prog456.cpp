@@ -1,8 +1,8 @@
-﻿#include <iostream>
-#include "blogger.h"
+﻿#include "blogger.h"
 #include <locale.h>
+#include "calculator.h"
 #include <Windows.h>
-#include <string>
+#include "car.h"
 
 
 int main()
@@ -73,7 +73,32 @@ int main()
 
 
 
+    //перегрузка <<
+    //date d(10, 2, 2020);
+    //cout << d;
 
+
+
+    //виртуальный метод
+    //video v("qwerty", "zxcvb", { 0,2,10 }, {10, 1, 2020});
+    //v.watch(10);
+
+
+    //абстрактный класс
+    //car* ptr[] = { new truck_car(), new sport_car() };
+    //for (int i = 0; i < 2; i++) {
+    //  ptr[i]->accelerate();
+    //}
+    //for (int i = 0; i < 2; i++) {
+    //  ptr[i]->brake();
+    //}
+
+
+
+    //шаблоны
+    //Calculator<float> c(32, 5);
+    //c.print_results();
+    
 }
 
 

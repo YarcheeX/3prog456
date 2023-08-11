@@ -42,11 +42,15 @@ void blogger::stat_increm()
 {
 	blogger_count++;
 }
-
 void blogger::stat_decrem()
 {
 	blogger_count--;
 }
+int blogger::getstat()
+{
+	return blogger_count;
+}
+
 blogger::blogger(string name) :blogger()
 {
 	this->set_name(name);
@@ -58,10 +62,6 @@ blogger::blogger(string name, string descr) :blogger(name)
 blogger::blogger(const blogger& other)
 {
 	*this = other;
-}
-int blogger::getstat()
-{
-	return blogger_count;
 }
 
 const blogger& blogger::operator=(const blogger& other)

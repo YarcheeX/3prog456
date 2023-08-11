@@ -88,4 +88,14 @@ void answer::input_answer()
 	{
 		getline(cin, text);
 	}
+
+	
+}
+
+ostream& operator<<(ostream& os, const answer& a)
+{
+	os << "Автор: " << a.author << "| ";
+	os << a.upload_date;
+	os << "Текст: " << a.text << '\n';
+	return os;
 }

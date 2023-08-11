@@ -168,7 +168,17 @@ void post::print_post() const
 	upload_date.print_date();
 }
 
-video::video() {
+ostream& operator<<(ostream& os, const post& p) {
+
+	os << "Заголовок: " << p.name << '\n';
+	os << "Просмотры: " << p.views << " | Лайки: " << p.likes << " | Комментарии: " << p.comments_count << '\n';
+	os << p.upload_date;
+	return os;
+}
+
+
+
+video::video(){
 
 	duration = { 0,0,0 };
 }
@@ -193,12 +203,10 @@ video::video(string name, string descr, Time duration, date upload_date) : post(
 	this->duration = duration;
 }
 
-video::video(const video& other):video()
-{
+video::video(const video& other):video() {
 
 	*this = other;
 }
-
 
 void video::print_post() const
 {
@@ -206,6 +214,17 @@ void video::print_post() const
 	printf("Длительность: %d:%d:%d\n", duration.get_hour(), duration.get_min(), duration.get_sec());
 	printf("Просмотры: %u | Лайки: %u | Комментарии: %u\n", views, likes, comments_count);
 	upload_date.print_date();
+}
+
+ostream& operator<<(ostream& os, const video& v)
+{
+	os << "Название: " << v.name << '\n';
+	os << "Длительность: " << v.duration;
+	os << "Просмотры: " << v.views;
+	os << " | Лайки: " << v.likes; 
+	os << " | Комментарии: " << v.comments_count << '\n';
+	os << v.upload_date;
+	return os;
 }
 
 void video::input_post()
@@ -245,18 +264,22 @@ void video::input_post()
 	if (a == 1) {
 		int min, sec, hour;
 		printf("Введите часы: ");
-		while (scanf_s("%d", &hour) != 0) {
+		while (scanf_s("%d", &hour) != 1) {
 			printf("Ошибка. Введите часы: ");
+			while (getchar() != '\n');
 		}
 		while (getchar() != '\n');
 		printf("Введите минуты:");
-		while (scanf_s("%d", &min) != 0) {
+		while (scanf_s("%d", &min) != 1) {
 			printf("Ошибка. Введите минуты: ");
+			while (getchar() != '\n');
 		}
 		while (getchar() != '\n');
 
 		printf("Введите секунды:");
-		while (scanf_s("%d", &sec) != 0) {
+		while (scanf_s("%d", &sec) != 1) {
+		
+			while (getchar() != '\n');
 			printf("Ошибка. Введите секунды: ");
 		}
 		while (getchar() != '\n');
@@ -305,6 +328,14 @@ void photo::print_post() const
 	printf("Название: %s\n", name.c_str());
 	printf("Просмотры: %u | Лайки: %u | Комментарии: %u\n", views, likes, comments_count);
 	upload_date.print_date();
+}
+
+ostream& operator<<(ostream& os, const photo& p)
+{
+	os << "Название: " << p.name << '\n';
+	os << "Просмотры: " << p.views << " | Лайки: " << p.likes << " | Комментарии: " << p.comments_count << '\n';
+	os << p.upload_date;
+	return os;
 }
 
 void photo::input_post()

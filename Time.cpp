@@ -36,7 +36,7 @@ void Time::set_time(int hour, int min, int sec)
 	}
 }
 
-void Time::get_time(int& hour, int& min, int& sec)
+void Time::get_time(int& hour, int& min, int& sec) const
 {
 	hour = this->hour;
 	min = this->min;
@@ -81,4 +81,12 @@ const Time Time::operator+(const Time& a)
 	}
 
 	return b;
+}
+
+ostream& operator<<(ostream& os, const Time& t)
+{
+	os << setfill('0') << setw(2) << t.hour;
+	os << ':' << setfill('0') << setw(2) << t.min;
+	os << ':' << setfill('0') << setw(2) << t.sec << endl;
+	return os;
 }
